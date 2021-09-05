@@ -624,9 +624,6 @@ if (localStorage.getItem('schoolcode')) {
     localStorage.setItem('schoolcode', schoolcode);
   }
 }
-if (school[schoolname] === undefined) {
-  localStorage.clear();
-}
 
 var today = new Date();
 var year = today.getFullYear(); // 년도
