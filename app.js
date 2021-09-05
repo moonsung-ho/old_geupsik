@@ -17,6 +17,7 @@ fetch(requestUrl)
       document.write(
         `<h1 style="text-align:center;">오늘은 급식 정보를 <br>제공하지 않습니다.</h1>`,
       );
+      document.title = `급식`;
     } else {
       document.title = `${res['mealServiceDietInfo'][1].row[0].SCHUL_NM}의 급식`;
       document.write(
