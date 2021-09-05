@@ -13,15 +13,18 @@ var requestUrl = `https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=4c1690204c
 fetch(requestUrl)
   .then((res) => res.json())
   .then((res) => {
-    if (res['RESULT'].CODE === 'INFO-200') {
+    if ((Object.keys(res).length <= 58)) {
+      //if (res['RESULT'].CODE === 'INFO-200') {
       document.write(
         `<h1 style="text-align:center;">오늘은 급식 정보를 <br>제공하지 않습니다.</h1>`,
       );
       document.title = `급식`;
     } else {
+      var meal = res['mealServiceDietInfo'][1].row[0].DDISH_NM.replace(/[0-9]/g, "")
+      var meal = meal.replace(/\./g,'')
       document.title = `${res['mealServiceDietInfo'][1].row[0].SCHUL_NM}의 급식`;
       document.write(
-        `<h3>${res['mealServiceDietInfo'][1].row[0].DDISH_NM}</h3>`,
+        `<h3 style="text-align:center;">${meal.replace('우유','')}</h3>`,
       );
     }
   });
