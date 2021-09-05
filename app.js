@@ -662,3 +662,5 @@ fetch(requestUrl)
       );
     }
   });
+  console.log(schoolname)
+  console.log(schoolcode)
