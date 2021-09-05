@@ -13,11 +13,12 @@ function reset() {
     window.location.reload()
   }
 }
-setInterval(reset, 10000)
+
 var requestUrl = `https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=4c1690204c08404ca7f1775720f17054&Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=B10&SD_SCHUL_CODE=7031158&MLSV_YMD=${year}${month}${date}`;
 fetch(requestUrl)
   .then((res) => res.json())
   .then((res) => {
+    setInterval(reset, 10000)
     if ((Object.keys(res).length <= 58)) {
       //if (res['RESULT'].CODE === 'INFO-200') {
       document.write(
