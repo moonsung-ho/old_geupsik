@@ -614,13 +614,18 @@ if (localStorage.getItem('schoolcode')) {
   var schoolname = 'defined';
   var schoolcode = localStorage.getItem('schoolcode');
 } else {
-  var schoolname = prompt('학교 이름을 입력하세요. (학교 앞 "서울"은 빼고 쓰세요.)');
+  var schoolname = prompt(
+    '학교 이름을 입력하세요. (학교 앞 "서울"은 빼고 쓰세요.)',
+  );
   if (school[schoolname] === undefined) {
     var schoolname = prompt('학교를 찾을 수 없습니다. 다시 입력하세요.');
   } else {
     var schoolcode = school[schoolname];
     localStorage.setItem('schoolcode', schoolcode);
   }
+}
+if (school[schoolname] === undefined) {
+  localStorage.clear();
 }
 
 var today = new Date();
