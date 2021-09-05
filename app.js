@@ -610,7 +610,7 @@ const school = {
   한양초등학교: '7134118',
   서울숭신초등학교: '7134150',
 };
-var info = document.getElementsByClassName('today');
+
 if (localStorage.getItem('schoolcode')) {
   var schoolname = 'defined';
   var schoolcode = localStorage.getItem('schoolcode');
@@ -643,8 +643,10 @@ fetch(requestUrl)
   .then((res) => res.json())
   .then((res) => {
     if (Object.keys(res).length <= 58) {
-      (info.innerHTML = `<h1 style="font-family: 'SBAggroL'; text-align:center; padding-top: 160px;">오늘은 급식이 <br>없는 날입니다.</h1>`),
-        (document.title = `급식`);
+      document.write(
+        `<h1 style="font-family: 'SBAggroL'; text-align:center; padding-top: 160px;">오늘은 급식이 <br>없는 날입니다.</h1>`,
+      );
+      document.title = `급식`;
     } else {
       var meal = res['mealServiceDietInfo'][1].row[0].DDISH_NM.replace(
         /[0-9]/g,
@@ -652,6 +654,11 @@ fetch(requestUrl)
       );
       var meal = meal.replace(/\./g, '');
       document.title = `${res['mealServiceDietInfo'][1].row[0].SCHUL_NM}의 급식`;
-      info.innerHTML = `<h3 style="font-family: 'SBAggroL'; text-align:center; padding-top: 60px;">${meal}</h3>`;
+      document.write(
+        `<h3 style="font-family: 'SBAggroL'; text-align:center; padding-top: 60px;">${meal.replace(
+          '우유',
+          '',
+        )}</h3>`,
+      );
     }
   });
