@@ -614,7 +614,9 @@ if (localStorage.getItem('schoolcode')) {
   var schoolname = 'defined';
   var schoolcode = localStorage.getItem('schoolcode');
 } else {
-  var schoolname = prompt('학교 이름을 입력하세요. ("서울"과 "초등학교"은 빼고 쓰세요.  ex.답십리)')
+  var schoolname = prompt(
+    '학교 이름을 입력하세요. ("서울"과 "초등학교"은 빼고 쓰세요.  ex.답십리)',
+  );
   if (school[schoolname] === undefined) {
     var schoolname = prompt('학교를 찾을 수 없습니다. 다시 입력하세요.');
     var schoolcode = school[schoolname];
@@ -644,8 +646,8 @@ var requestUrl = `https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=4c1690204c
 fetch(requestUrl)
   .then((res) => res.json())
   .then((res) => {
-    console.log(day);
-    if (day === 'SAT' || day === 'SUN') {
+    console.log('mealServiceDietInfo' in res);
+    if ('mealServiceDietInfo' in res === false) {
       document.write(
         `<h1 style="font-family: 'SBAggroL'; text-align:center; padding-top: 160px;">오늘은 급식이 <br>없는 날입니다.</h1>`,
       );
@@ -658,10 +660,11 @@ fetch(requestUrl)
       var meal = meal.replace(/\./g, '');
       document.title = `${res['mealServiceDietInfo'][1].row[0].SCHUL_NM}의 급식`;
       document.write(
-        `<h3 style="font-family: 'SBAggroL'; text-align:center; padding-top: 60px;">${meal.replace(
+        `<h2 style="font-family: 'SBAggroL'; text-align:center; padding-top: 70px;">${meal.replace(
           '우유',
           '',
-        )}</h3>`,
+        )}</h2>`,
       );
+      //document.close();날짜변경용
     }
   });
