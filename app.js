@@ -16,7 +16,7 @@ fetch(requestUrl)
     if ((Object.keys(res).length <= 58)) {
       //if (res['RESULT'].CODE === 'INFO-200') {
       document.write(
-        `<h1 style="text-align:center;">오늘은 급식 정보를 <br>제공하지 않습니다.</h1>`,
+        `<h1 style="text-align:center; padding-top: 160px;">오늘은 급식 정보를 <br>제공하지 않습니다.</h1>`,
       );
       document.title = `급식`;
     } else {
@@ -24,7 +24,7 @@ fetch(requestUrl)
       var meal = meal.replace(/\./g,'')
       document.title = `${res['mealServiceDietInfo'][1].row[0].SCHUL_NM}의 급식`;
       document.write(
-        `<h3 style="text-align:center;">${meal.replace('우유','')}</h3>`,
+        `<h3 style="text-align:center; padding-top: 60px;">${meal.replace('우유','')}</h3>`,
       );
     }
   });
