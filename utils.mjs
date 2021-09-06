@@ -1,4 +1,11 @@
 const getDate = () => {
+  function getDateStr(myDate) {
+    let month = myDate.getMonth() + 1;
+    let day = myDate.getDate();
+    if (month < 10) month = '0' + month;
+    if (day < 10) day = '0' + day;
+    return myDate.getFullYear() + '' + month + '' + day;
+  }
   const today = new Date();
 
   const year = today.getFullYear(); // 년도
@@ -14,10 +21,9 @@ const getDate = () => {
   }
 
   let day = today.getDay(); // 요일
-  const WEEKDAY = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  const WEEKDAY = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
   day = WEEKDAY[day];
 
   return { year, month, date, day };
 };
-
 export { getDate };
