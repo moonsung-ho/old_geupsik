@@ -13,8 +13,4 @@ while (!schoolCode) {
     setSchoolCode(schoolCode);
   }
 }
-document.write(
-  `<input style="font-family: 'SBAggroL'; text-align:center; margin-left: 44.3%;" type="date" value="${getDate()}" min="2000-01-01" max="2099-12-31">`,
-);
-const datehtml = document.getElementsByTagName('input')
-getMealInfo(schoolCode, datehtml.item);
+getMealInfo(schoolCode, getDate());
