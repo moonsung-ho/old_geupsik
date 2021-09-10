@@ -1,20 +1,19 @@
+const getDateStr = () => {
+  const thisDay = new Date();
+  let month = thisDay.getMonth() + 1;
+  let day = thisDay.getDate();
+  if (month < 10) month = '0' + month;
+  if (day < 10) day = '0' + day;
+  return `${thisDay.getFullYear()}-${month}-${day}`;
+};
 const getDate = () => {
-  function getDateStr(myDate) {
-    let month = myDate.getMonth() + 1;
-    let day = myDate.getDate();
-    if (month < 10) month = '0' + month;
-    if (day < 10) day = '0' + day;
-    return myDate.getFullYear() + '' + month + '' + day;
-  }
   const today = new Date();
 
   const year = today.getFullYear(); // 년도
-
   let month = today.getMonth() + 1; // 월
   if (month < 10) {
     month = `0${month}`;
   }
-
   let date = today.getDate(); // 날짜
   if (date < 10) {
     date = `0${date}`;
@@ -26,4 +25,4 @@ const getDate = () => {
 
   return { year, month, date, day };
 };
-export { getDate };
+export { getDate, getDateStr };

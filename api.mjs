@@ -1,6 +1,4 @@
 const getMealInfo = (schoolCode, { year, month, date }) => {
-  const dateInput = document.querySelector('input');
-  dateInput.value = `${year}-${month}-${date}`
   const requestUrl = `https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=4c1690204c08404ca7f1775720f17054&Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=B10&SD_SCHUL_CODE=${schoolCode}&MLSV_YMD=${year}${month}${date}`;
   const today = document.getElementsByClassName('today')[0];
   fetch(requestUrl)
