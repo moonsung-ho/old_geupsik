@@ -17,7 +17,6 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
         meal = meal.replace('우유', ''); // 우유는 표시하지 않는다.
         document.title = `${json['mealServiceDietInfo'][1].row[0].SCHUL_NM}의 급식`;
         today.innerHTML = `<h2 style="font-family: 'SBAggroL'; text-align:center;">${meal}</h2>`;
-        console.log(requestUrl)
       }
     })
     .catch((err) => {
