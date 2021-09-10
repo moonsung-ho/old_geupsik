@@ -1,11 +1,23 @@
 @font-face {
-    font-family: 'SBAggroL';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'SBAggroL';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+input {
+  border-radius: 10px;
+  vertical-align: center;
+  padding-bottom: 12px;
+  height:20px;
+  width: auto;
+  font-size: smaller;
+}
+h2 {
+  padding-top: 10px;
 }
 * {
-  font-family: 'SBAggroL'!important;
+  font-family: 'SBAggroL' !important;
   font-size: 30px;
   text-align: center;
   padding-top: 20px;
