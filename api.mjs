@@ -5,24 +5,30 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
   fetch(requestUrl)
     .then((res) => res.json())
     .then((json) => {
-      console.log(requestUrl)
+      console.log(requestUrl);
       if (!('mealServiceDietInfo' in json)) {
         (today.innerHTML = `<h1 style="font-family: 'SBAggroL'; text-align:center;">급식이 <br>없는 날입니다.</h1>`),
           (document.title = `급식`);
-          kcal.innerText = `0칼로리`
+        kcal.innerText = `0칼로리`;
       } else {
         let meal = json['mealServiceDietInfo'][1].row[0].DDISH_NM.replace(
           /[0-9]/g,
           '',
         ); // 불필요한 숫자를 제거한다.
-        meal = meal.slice(0, meal.indexOf('밥') + 1) + '🍚' + meal.slice(meal.indexOf('밥') + 1, meal.length);
+        if (meal.includes('밥')) {
+          meal =
+            meal.slice(0, meal.indexOf('밥') + 1) +
+            '🍚' +
+            meal.slice(meal.indexOf('밥') + 1, meal.length);
+        }
         meal = meal.replace(/\*/g, '');
         meal = meal.replace(/\./g, ''); // 불필요한 마침표를 제거한다.
         meal = meal.replace('우유', ''); // 우유는 표시하지 않는다.
         document.title = `${json['mealServiceDietInfo'][1].row[0].SCHUL_NM}의 급식`;
         today.innerHTML = `<h2 style="font-family: 'SBAggroL'; text-align:center;">${meal}</h2>`;
-        kcal.innerText = `${json['mealServiceDietInfo'][1].row[0].CAL_INFO.replace(' Kcal', '')}칼로리`
-
+        kcal.innerText = `${json[
+          'mealServiceDietInfo'
+        ][1].row[0].CAL_INFO.replace(' Kcal', '')}칼로리`;
       }
     })
     .catch((err) => {
