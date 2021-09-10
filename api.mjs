@@ -5,7 +5,7 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
     .then((res) => res.json())
     .then((json) => {
       if (!('mealServiceDietInfo' in json)) {
-        (today.innerHTML = `<h1 style="font-family: 'SBAggroL'; text-align:center; padding-top: 160px;">오늘은 급식이 <br>없는 날입니다.</h1>`),
+        (today.innerHTML = `<h1 style="font-family: 'SBAggroL'; text-align:center; padding-top: 160px;">급식이 <br>없는 날입니다.</h1>`),
           (document.title = `급식`);
       } else {
         let meal = json['mealServiceDietInfo'][1].row[0].DDISH_NM.replace(
