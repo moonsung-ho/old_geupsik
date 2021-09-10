@@ -9,7 +9,7 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
       if (!('mealServiceDietInfo' in json)) {
         (today.innerHTML = `<h1 style="font-family: 'SBAggroL'; text-align:center;">급식이 <br>없는 날입니다.</h1>`),
           (document.title = `급식`);
-        kcal.innerText = `0칼로리`;
+        kcal.innerText = ``;
       } else {
         let meal = json['mealServiceDietInfo'][1].row[0].DDISH_NM.replace(
           /[0-9]/g,
