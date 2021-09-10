@@ -19,13 +19,11 @@ document.querySelector('input').onblur = function () {
   }
   now.day = dayOfWeek;
   getMealInfo(schoolCode, now);
-  console.log(now);
 };
-console.log(getDate());
 let schoolCode = getSchoolCode();
 while (!schoolCode) {
   const input = prompt(
-    '학교 이름을 입력하세요. ("서울"과 "초등학교"은 빼고 쓰세요.  ex.답십리)',
+    '학교 이름을 입력하세요. ("서울"은 빼고 쓰세요.  ex.답십리초등학교, 신길중학교, 신도림고등학교)',
   );
   schoolCode = schools[input];
   if (schoolCode) {

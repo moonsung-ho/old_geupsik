@@ -12,6 +12,7 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
           /[0-9]/g,
           '',
         ); // 불필요한 숫자를 제거한다.
+        meal = meal.replace(/\*/g, '');
         meal = meal.replace(/\./g, ''); // 불필요한 마침표를 제거한다.
         meal = meal.replace('우유', ''); // 우유는 표시하지 않는다.
         document.title = `${json['mealServiceDietInfo'][1].row[0].SCHUL_NM}의 급식`;
