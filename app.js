@@ -6,11 +6,18 @@ import { getMealInfo } from './api.mjs';
 const dateInput = document.querySelector('input');
 dateInput.value = getDateStr(new Date());
 document.querySelector('input').onblur = function () {
+  var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  var dayOfWeek = week[new Date(dateInput.value).getDay()];
   let dayChosen = dateInput.value.split('-');
   let now = new Object();
   now.year = dayChosen[0] *= 1;
-  now.month = dayChosen[1]
-  now.date = dayChosen[2] *= 1;
+  now.month = dayChosen[1];
+  if (dayChosen[2] < 10) {
+    now.date = `0${(dayChosen[2] *= 1)}`;
+  } else {
+    now.date = dayChosen[2] *= 1;
+  }
+  now.day = dayOfWeek;
   getMealInfo(schoolCode, now);
   console.log(now);
 };
