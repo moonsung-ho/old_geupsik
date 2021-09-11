@@ -39,14 +39,16 @@ input {
   height: 20px;
   width: auto;
   font-size: smaller;
+  margin-top: 20px;
+  padding-top: 20px;
 }
-h2 {
-  padding-top: 10px;
+h1 {
+  padding-top: 40px;
+  margin-top:40px;
 }
 * {
   font-family: 'SBAggroL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 30px;
   text-align: center;
-  padding-top: 20px;
 }
