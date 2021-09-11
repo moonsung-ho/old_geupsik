@@ -5,11 +5,34 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+footer {
+  vertical-align: bottom;
+  border-top: 1px solid black;
+  margin: 0px;
+  margin-top: 100%;
+  font-size: small;
+  padding-top: 3%;
+  font-family: Pretendard-Regular -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+a {
+  font-family: Pretendard-Regular -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  text-decoration: none;
+  color: black;
+}
 input {
   border-radius: 10px;
   vertical-align: center;
   padding-bottom: 12px;
-  height:20px;
+  height: 20px;
   width: auto;
   font-size: smaller;
 }
@@ -17,7 +40,8 @@ h2 {
   padding-top: 10px;
 }
 * {
-  font-family: 'SBAggroL' !important;
+  font-family: 'SBAggroL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 30px;
   text-align: center;
   padding-top: 20px;
