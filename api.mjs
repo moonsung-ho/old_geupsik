@@ -7,7 +7,7 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
     .then((json) => {
       console.log(requestUrl);
       if (!('mealServiceDietInfo' in json)) {
-        (today.innerHTML = `<h1 style="font-family: 'SBAggroL'; text-align:center;">급식이 <br>없는 날입니다.<br><br><br><br><br><br><br><br><br></h1>`),
+        (today.innerHTML = `<h1 style="font-family: 'SBAggroL'; text-align:center;">급식이 <br>없는 날입니다.<br><br><br><br><br><br></h1>`),
           (document.title = `급식`);
         kcal.innerText = ``;
       } else {
