@@ -1,11 +1,3 @@
-const getDateStr = () => {
-  const thisDay = new Date();
-  let month = thisDay.getMonth() + 1;
-  let day = thisDay.getDate();
-  if (month < 10) month = '0' + month;
-  if (day < 10) day = '0' + day;
-  return `${thisDay.getFullYear()}-${month}-${day}`;
-};
 const getDate = () => {
   const today = new Date();
 
@@ -25,4 +17,10 @@ const getDate = () => {
 
   return { year, month, date, day };
 };
+
+const getDateStr = () => {
+  const { year, month, date } = getDate();
+  return `${year}-${month}-${date}`;
+}
+
 export { getDate, getDateStr };
