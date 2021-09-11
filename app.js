@@ -5,7 +5,7 @@ import { getMealInfo } from './api.mjs';
 
 const dateInput = document.querySelector('input');
 dateInput.value = getDateStr(new Date());
-document.querySelector('input').onblur = function () {
+document.querySelector('input').onchange = function () {
   var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
   var dayOfWeek = week[new Date(dateInput.value).getDay()];
   let dayChosen = dateInput.value.split('-');
