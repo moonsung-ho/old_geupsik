@@ -6,6 +6,8 @@ import { parseDateStr } from "./utils.mjs";
 
 const dateInput = document.querySelector("#select-date");
 dateInput.value = getDateStr();
+let geupsik = localStorage.getItem("geupsik");
+localStorage.setItem("geupsik", geupsik * 1 + 1)
 
 document.querySelector("#select-date").onchange = function () {
   const dayChosen = parseDateStr(dateInput.value);
