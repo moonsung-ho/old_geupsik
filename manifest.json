@@ -1,0 +1,16 @@
+{
+  "name": "급식",
+  "short_name": "급식",
+  "icons": [
+    {
+      "src": "/favicons/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "start_url": "/"
+}
