@@ -11,7 +11,7 @@ if (
 ) {
   if (!window.navigator.standalone) {
     if (!localStorage.getItem('homescreenbanner')) {
-      alert('밑 공유 버튼을 누르고 스크롤을 내려서 앱을 홈 화면에 추가하세요!');
+      alert('밑에 있는 공유 버튼을 누르고 스크롤을 내려서 앱을 홈 화면에 추가하세요!');
       localStorage.setItem('homescreenbanner', true);
     }
   }
