@@ -4,22 +4,24 @@ import { getDateStr, getDate } from './utils.mjs';
 import { getMealInfo } from './api.mjs';
 import { parseDateStr } from './utils.mjs';
 
-if (
-  navigator.userAgent.indexOf('iPhone') != -1 ||
-  navigator.userAgent.indexOf('iPod') != -1 ||
-  navigator.userAgent.indexOf('iPad') != -1
-) {
-  if (!window.navigator.standalone) {
-    if (!localStorage.getItem('homescreenbanner')) {
-      alert('밑에 있는 공유 버튼을 누르고 스크롤을 내려서 앱을 홈 화면에 추가하세요!');
-      localStorage.setItem('homescreenbanner', true);
-    }
-  }
-}
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js');
   });
+  if (
+    navigator.userAgent.indexOf('iPhone') != -1 ||
+    navigator.userAgent.indexOf('iPod') != -1 ||
+    navigator.userAgent.indexOf('iPad') != -1
+  ) {
+    if (!window.navigator.standalone) {
+      if (!localStorage.getItem('homescreenbanner')) {
+        alert(
+          '밑에 있는 공유 버튼을 누르고 스크롤을 내려서 앱을 홈 화면에 추가하세요!',
+        );
+        localStorage.setItem('homescreenbanner', true);
+      }
+    }
+  }
 }
 
 const dateInput = document.querySelector('#select-date');
@@ -29,7 +31,6 @@ localStorage.setItem('geupsik', geupsik * 1 + 1);
 
 document.querySelector('#select-date').onchange = function () {
   const dayChosen = parseDateStr(dateInput.value);
-
   getMealInfo(schoolCode, dayChosen);
 };
 
