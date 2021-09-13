@@ -7,6 +7,10 @@
     <title>오프라인입니다.</title>
 </head>
 <body>
-    <h1>기기가 오프라인입니다. 온라인 상태로 전환해 주세요.</h1>
+    <h1 id="today">급식</h1>
+    <script>
+        const today = document.getElementById("today");
+        today.innerHTML = `<h2text-align:center;">${localStorage.getItem(recentMeal)}</h2>`;
+    </script>
 </body>
 </html>

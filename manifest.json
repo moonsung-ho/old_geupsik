@@ -14,6 +14,7 @@
       "purpose": "any maskable"
     }
   ],
+  "prefer_related_applications": true,
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",

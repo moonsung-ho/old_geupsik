@@ -37,7 +37,7 @@ document.querySelector('#select-date').onchange = function () {
 let schoolCode = getSchoolCode();
 while (!schoolCode) {
   const input = prompt(
-    '학교 이름을 입력하세요. ("서울"은 빼고 쓰세요.  ex.답십리초등학교, 신길중학교, 신도림고등학교)',
+    '학교 이름을 입력하세요. (ex.답십리초, 신길중, 신도림고)',
   );
   schoolCode = schools[input];
   if (schoolCode) {

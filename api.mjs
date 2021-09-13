@@ -28,6 +28,8 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
         kcal.innerText = `${json[
           "mealServiceDietInfo"
         ][1].row[0].CAL_INFO.replace(" Kcal", "")}칼로리`;
+        localStorage.removeItem("recentMeal")
+        localStorage.setItem("recentMeal" ,meal)
       }
     })
     .catch((err) => {
