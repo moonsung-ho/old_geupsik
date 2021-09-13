@@ -3,12 +3,21 @@ import { getSchoolCode, setSchoolCode } from './db.mjs';
 import { getDateStr, getDate } from './utils.mjs';
 import { getMealInfo } from './api.mjs';
 import { parseDateStr } from './utils.mjs';
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/service-worker.js");
+
+if (
+  navigator.userAgent.indexOf('iPhone') != -1 ||
+  navigator.userAgent.indexOf('iPod') != -1 ||
+  navigator.userAgent.indexOf('iPad') != -1
+) {
+  if (!window.navigator.standalone) {
+    alert('밑 공유 버튼을 누르고 스크롤을 내려서 앱을 홈 화면에 추가하세요!');
+  }
+}
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js');
   });
 }
-
 
 const dateInput = document.querySelector('#select-date');
 dateInput.value = getDateStr();
