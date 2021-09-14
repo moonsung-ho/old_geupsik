@@ -17,6 +17,10 @@ div {
   width: 100%;
   margin-top: 100%;
 }
+label{
+  font-size: small;
+  margin-top: 100px;
+}
 footer {
   vertical-align: bottom;
   border-top: 1px solid black;
@@ -40,7 +44,7 @@ input {
   height: 20px;
   width: auto;
   font-size: smaller;
-  margin-top: 20px;
+
   padding-top: 20px;
 }
 h1 {
