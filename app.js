@@ -59,7 +59,7 @@ function handleTouchMove(evt) {
       let datesplit = dateInput.value.split('-');
       getMealInfo(
         schoolCode,
-        getNextDate(datesplit[0], datesplit[1], datesplit[2]),
+        getNextDate(datesplit[0], datesplit[1] - 1, datesplit[2]),
       );
       dateInput.value = getDateNStr(datesplit[0], datesplit[1], datesplit[2]);
     } else {

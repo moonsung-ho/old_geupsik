@@ -31,7 +31,7 @@ const getPrevDate = (nyear, nmonth, ndate) => {
   }
   let date = prevDate.getDate();
   if (date < 10) {
-    date = `0${date}` * 1;
+    date = `0${date}`;
   }
   return { year, month, date };
 };
@@ -41,19 +41,15 @@ const getDatePStr = (nyear, nmonth, ndate) => {
 };
 const getNextDate = (nyear, nmonth, ndate) => {
   let today = new Date(nyear, nmonth, ndate);
-  let nextDate = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate() + 1,
-  );
-  let year = nextDate.getFullYear();
-  let month = `${nextDate.getMonth()}`;
+  today.setDate(today.getDate() + 1);
+  let year = today.getFullYear();
+  let month = `${today.getMonth()}`;
   if (month < 10) {
     month = `0${month}`;
   }
-  let date = nextDate.getDate();
+  let date = today.getDate();
   if (date < 10) {
-    date = `0${date}` * 1;
+    date = `0${date}`;
   }
   return { year, month, date };
 };
