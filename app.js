@@ -1,15 +1,13 @@
 import schools from './schools.mjs';
 import { getSchoolCode, setSchoolCode } from './db.mjs';
+import { getDateStr, getDate, parseDateStr } from './utils.mjs';
+import { getMealInfo } from './api.mjs';
 import {
-  getDateStr,
-  getDate,
   getNextDate,
   getDateNStr,
   getPrevDate,
   getDatePStr,
-} from './utils.mjs';
-import { getMealInfo } from './api.mjs';
-import { parseDateStr } from './utils.mjs';
+} from './dates.mjs';
 let dateInput = document.querySelector('#select-date');
 dateInput.value = getDateStr();
 let schoolCode = getSchoolCode();
@@ -53,13 +51,12 @@ function handleTouchMove(evt) {
   var yDiff = yDown - yUp;
 
   if (Math.abs(xDiff) > Math.abs(yDiff)) {
-    /*most significant*/
     if (xDiff > 0) {
       /* left swipe */
       let datesplit = dateInput.value.split('-');
       getMealInfo(
         schoolCode,
-        getNextDate(datesplit[0], datesplit[1] - 1, datesplit[2]),
+        getNextDate(datesplit[0], datesplit[1], datesplit[2]),
       );
       dateInput.value = getDateNStr(datesplit[0], datesplit[1], datesplit[2]);
     } else {
