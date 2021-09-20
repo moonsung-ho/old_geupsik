@@ -1,0 +1,19 @@
+{
+  "name": "geupsik",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/sungho0205/geupsik",
+  "author": "sungho0205 <moon@7959.ml>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --no-minify"
+  },
+  "dependencies": {
+    "date-fns": "^2.24.0"
+  },
+  "devDependencies": {
+    "cssnano": "^5.0.8",
+    "postcss": "^8.2.15"
+  }
+}

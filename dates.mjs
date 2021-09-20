@@ -1,12 +1,11 @@
+import { subDays, addDays } from 'date-fns';
+
 const getPrevDate = (pyear, pmonth, pdate) => {
-  let thisDay = new Date(pyear, pmonth, pdate);
-  let prevDay = new Date(
-    thisDay.getFullYear(),
-    thisDay.getMonth(),
-    thisDay.getDate() - 1,
-  );
+  let thisDay = new Date(pyear, pmonth - 1, pdate);
+  let prevDay = subDays(thisDay, 1);
+
   let year = prevDay.getFullYear();
-  let month = `${prevDay.getMonth()}`;
+  let month = `${prevDay.getMonth() + 1}`;
   if (month < 10) {
     month = `0${month}`;
   }
@@ -23,14 +22,12 @@ const getDatePStr = (pyear, pmonth, pdate) => {
 };
 
 const getNextDate = (nyear, nmonth, ndate) => {
-  let thisDay = new Date(nyear, nmonth, ndate);
-  let nextDay = new Date(
-    thisDay.getFullYear(),
-    thisDay.getMonth(),
-    thisDay.getDate() + 1,
-  );
+  let thisDay = new Date(nyear, nmonth - 1, ndate);
+  let nextDay = addDays(thisDay, 1);
+
+  console.log(thisDay, nextDay)
   let year = nextDay.getFullYear();
-  let month = `${nextDay.getMonth()}`;
+  let month = `${nextDay.getMonth() + 1}`;
   if (month < 10) {
     month = `0${month}`;
   }
