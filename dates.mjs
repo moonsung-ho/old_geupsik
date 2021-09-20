@@ -25,7 +25,6 @@ const getNextDate = (nyear, nmonth, ndate) => {
   let thisDay = new Date(nyear, nmonth - 1, ndate);
   let nextDay = addDays(thisDay, 1);
 
-  console.log(thisDay, nextDay)
   let year = nextDay.getFullYear();
   let month = `${nextDay.getMonth() + 1}`;
   if (month < 10) {
