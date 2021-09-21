@@ -7,8 +7,9 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --no-minify && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/app.*.js",
-    "build:netlify": "parcel build index.html --no-minify && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' /opt/build/repo/dist/app.*.js"
+    "build": "yarn clean && parcel build index.html robots.txt --no-minify && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/app.*.js && npx netlify deploy --prod --dir dist",
+    "clean": "rm -rf dist",
+    "git": "git add . && git commit -m 'd' && git push origin master"
   },
   "dependencies": {
     "date-fns": "^2.24.0",
