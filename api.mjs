@@ -30,13 +30,13 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
         today.innerHTML = `${meal}`;
         kcal.innerText = `${json[
           'mealServiceDietInfo'
-        ][1].row[0].CAL_INFO.replace(' Kcal', '')}칼로리`;
+        ][1].row[0].CAL_INFO.replace(' Kcal', '칼로리')}`;
         document.getElementById('school-name-div').style.display = 'block';
         schoolName.innerText = `${json['mealServiceDietInfo'][1].row[0].SCHUL_NM}`;
         if (
           json['mealServiceDietInfo'][1].row[0].SCHUL_NM === '서울은평초등학교'
         ) {
-          schoolName.style.color = '#e28743';
+          schoolName.innerText = '🎉서울은평초등학교🎉'
           schoolName.onclick = function () {
             easterEgg = easterEgg + 1;
             if (easterEgg * 1 >= 10) {
