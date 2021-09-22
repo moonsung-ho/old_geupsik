@@ -36,7 +36,7 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
         if (
           json['mealServiceDietInfo'][1].row[0].SCHUL_NM === '서울은평초등학교'
         ) {
-          schoolName.style.color = 'aqua';
+          schoolName.style.color = '#e28743';
           schoolName.onclick = function () {
             easterEgg = easterEgg + 1;
             if (easterEgg * 1 >= 10) {
