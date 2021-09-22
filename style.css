@@ -42,7 +42,7 @@ input {
   padding-top: 20px;
 }
 h1 {
-  margin-top: 3vh !important;
+  margin-top: 4vh !important;
   font-family: 'SBAggroL', Arial, Helvetica, sans-serif;
   text-align: center;
 }
@@ -52,9 +52,10 @@ h1 {
   font-size: 30px;
   text-align: center;
 }
-i {
+#school-name {
   font-size: smaller;
   margin: 0px !important;
+  cursor: pointer;
 }
 p {
   padding-top: 0.5vh !important;
