@@ -8,7 +8,8 @@
 }
 label {
   font-size: small;
-  margin-top: 100px;
+  padding-top: 0.1vh !important;
+  margin-top: 0.1vh !important;
 }
 footer {
   vertical-align: bottom;
@@ -38,15 +39,22 @@ input {
   height: 20px;
   width: auto;
   font-size: smaller;
-
   padding-top: 20px;
 }
 h1 {
-  padding-top: 4.5vh;
+  margin-top: 0.5vh !important;
 }
 * {
   font-family: 'Gowun Dodum', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 30px;
   text-align: center;
+}
+i {
+  font-size: smaller;
+  margin: 0px !important;
+}
+p {
+  padding-top: 0.5vh !important;
+  margin-top: 0.5vh !important;
 }
