@@ -7,7 +7,7 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
     .then((res) => res.json())
     .then((json) => {
       if (!('mealServiceDietInfo' in json)) {
-        (today.innerHTML = `<h1 style="font-family: 'SBAggroL'; text-align:center;">급식이 <br>없는 날입니다.</h1>`),
+        (today.innerHTML = `<br>급식이 <br>없는 날입니다.`),
           (document.title = `급식`);
         kcal.innerText = ``;
         document.getElementById('school-name-div').style.display = 'none';
@@ -27,7 +27,7 @@ const getMealInfo = (schoolCode, { year, month, date }) => {
         meal = meal.replace('우유', ''); // 우유는 표시하지 않는다.
         schoolName.innerText = `${json['mealServiceDietInfo'][1].row[0].SCHUL_NM}`;
         document.title = `${json['mealServiceDietInfo'][1].row[0].SCHUL_NM}의 급식`;
-        today.innerHTML = `<h2 style="font-family: 'SBAggroL'; text-align:center;">${meal}</h2>`;
+        today.innerHTML = `${meal}`;
         kcal.innerText = `${json[
           'mealServiceDietInfo'
         ][1].row[0].CAL_INFO.replace(' Kcal', '')}칼로리`;
