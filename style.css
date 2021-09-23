@@ -83,6 +83,9 @@ p {
   -ms-user-select: none;
   user-select: none;
 }
+input:focus {
+  outline: none;
+}
 @media (prefers-color-scheme: dark) {
   label {
     color: #f1f1f1;
@@ -97,10 +100,6 @@ p {
   input {
     border: #e2e2e2 1px solid !important;
     color: #f1f1f1;
-  }
-
-  input:focus {
-    outline: none;
   }
   h1 {
     color: #f1f1f1;
