@@ -1,4 +1,4 @@
-const school = {
+const schools = {
   이스터에그: '7031158',
   세종과학고: '7010816',
   서울국제고: '7010817',
@@ -960,4 +960,4 @@ const school = {
   숭신초: '7134150',
 };
 
-export default school;
+export default schools;

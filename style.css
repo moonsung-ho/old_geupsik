@@ -86,6 +86,11 @@ p {
 input:focus {
   outline: none;
 }
+button {
+  float: right;
+  background: transparent;
+  border: none;
+}
 @media (prefers-color-scheme: dark) {
   label {
     color: #f1f1f1;
@@ -95,7 +100,7 @@ input:focus {
     border-top: 1px solid #e2e2e2 !important;
   }
   a {
-    color: #fff;
+    color: #fff !important;
   }
   input {
     border: #e2e2e2 1px solid !important;
@@ -108,7 +113,7 @@ input:focus {
     color: #f1f1f1;
   }
   body {
-    background-color: #121212;
+    background-color: #000000;
   }
   p {
     color: #f1f1f1;
