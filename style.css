@@ -45,6 +45,8 @@ input {
   border-radius: 10px;
   vertical-align: center;
   padding-bottom: 12px;
+  text-align: center;
+  margin-left: 5vh;
   height: 20px;
   width: auto;
   font-size: smaller;
@@ -83,15 +85,23 @@ p {
   -ms-user-select: none;
   user-select: none;
 }
-input:focus {
+.input:focus {
   outline: none;
 }
-button {
+#button {
   float: right;
   background: transparent;
   border: none;
 }
+button {
+  border: #f1f1f1 2px solid !important;
+  border-radius: 30px;
+}
 @media (prefers-color-scheme: dark) {
+  button {
+    color: #f1f1f1;
+    background: transparent;
+  }
   label {
     color: #f1f1f1;
   }
@@ -102,7 +112,7 @@ button {
   a {
     color: #fff !important;
   }
-  input {
+  .input {
     border: #e2e2e2 1px solid !important;
     color: #f1f1f1;
   }
