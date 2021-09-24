@@ -15,6 +15,11 @@ while (!schoolCode) {
   const input = prompt(
     '학교 이름을 입력하세요. (ex.답십리초, 신길중, 신도림고)',
   );
+  if (fullStr.charAt(fullStr.length - 1) === '중') {
+    localStorage.setItem('SCHOOLNAME', `${input}학교`);
+  } else {
+    localStorage.setItem('SCHOOLNAME', `${input}등학교`);
+  }
   schoolCode = schools[input];
   if (schoolCode) {
     setSchoolCode(schoolCode);

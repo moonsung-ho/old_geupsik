@@ -88,6 +88,12 @@ p {
 .input:focus {
   outline: none;
 }
+#devs {
+  font-size: smaller;
+}
+#previous-school {
+  font-size: small;
+}
 #button {
   float: right;
   background: transparent;
