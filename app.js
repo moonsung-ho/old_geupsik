@@ -16,7 +16,7 @@ dateInput.value = getDateStr();
 let schoolCode = getSchoolCode();
 while (!schoolCode) {
   const input = prompt(
-    '학교 이름을 입력하세요. (ex.답십리초, 신길중, 신도림고)',
+    '학교 이름을 입력하세요. (ex.서울구암유치원, 서울답십리초, 신길중, 이화여고)',
   );
   if (fullStr.charAt(fullStr.length - 1) === '중') {
     localStorage.setItem('SCHOOLNAME', `${input}학교`);
