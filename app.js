@@ -8,6 +8,9 @@ import {
   getPrevDate,
   getDatePStr,
 } from './dates.mjs';
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
 let dateInput = document.querySelector('#select-date');
 dateInput.value = getDateStr();
 let schoolCode = getSchoolCode();
@@ -25,12 +28,11 @@ while (!schoolCode) {
     setSchoolCode(schoolCode);
   }
 }
+//스와이프
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
-
 var xDown = null;
 var yDown = null;
-
 function getTouches(evt) {
   return (
     evt.touches || // browser API
@@ -78,11 +80,6 @@ function handleTouchMove(evt) {
   xDown = null;
   yDown = null;
 }
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js');
-  });
   if (
     navigator.userAgent.indexOf('iPhone') != -1 ||
     navigator.userAgent.indexOf('iPod') != -1 ||
@@ -97,7 +94,6 @@ if ('serviceWorker' in navigator) {
       }
     }
   }
-}
 let geupsik = localStorage.getItem('geupsik');
 localStorage.setItem('geupsik', geupsik * 1 + 1);
 

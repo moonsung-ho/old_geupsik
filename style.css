@@ -7,6 +7,7 @@
   font-style: normal;
 }
 label {
+  margin-left: 6vh;
   font-size: small;
   padding-top: 0.1vh !important;
   margin-top: 0.1vh !important;
@@ -46,7 +47,7 @@ input {
   vertical-align: center;
   padding-bottom: 12px;
   text-align: center;
-  margin-left: 5vh;
+  margin-left: 6vh;
   height: 20px;
   width: auto;
   font-size: smaller;
@@ -97,10 +98,10 @@ p {
 #button {
   float: right;
   background: transparent;
-  border: none;
+  border: none !important;
 }
 button {
-  border: #f1f1f1 2px solid !important;
+  border: #f1f1f1 2px solid;
   border-radius: 30px;
 }
 @media (prefers-color-scheme: dark) {
