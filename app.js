@@ -16,16 +16,15 @@ dateInput.value = getDateStr();
 let schoolCode = getSchoolCode();
 while (!schoolCode) {
   const input = prompt(
-    '학교 이름을 입력하세요. (ex.서울구암유치원, 서울답십리초, 신길중, 이화여고)',
+    '학교 이름을 입력하세요. (ex.답십리초, 신길중, 이화여고)',
   );
-  if (fullStr.charAt(fullStr.length - 1) === '중') {
-    localStorage.setItem('SCHOOLNAME', `${input}학교`);
-  } else {
-    localStorage.setItem('SCHOOLNAME', `${input}등학교`);
-  }
-  schoolCode = schools[input];
+  schoolCode = schools[input][0];
+  officeCode = schools[input][1];
   if (schoolCode) {
     setSchoolCode(schoolCode);
+  }
+  if (officeCode) {
+    localStorage.setItem('officecode', officeCode);
   }
 }
 //스와이프
@@ -80,20 +79,20 @@ function handleTouchMove(evt) {
   xDown = null;
   yDown = null;
 }
-  if (
-    navigator.userAgent.indexOf('iPhone') != -1 ||
-    navigator.userAgent.indexOf('iPod') != -1 ||
-    navigator.userAgent.indexOf('iPad') != -1
-  ) {
-    if (!window.navigator.standalone) {
-      if (!localStorage.getItem('homescreenbanner')) {
-        alert(
-          '밑에 있는 공유 버튼을 누르고 스크롤을 내려서 앱을 홈 화면에 추가하세요!',
-        );
-        localStorage.setItem('homescreenbanner', true);
-      }
+if (
+  navigator.userAgent.indexOf('iPhone') != -1 ||
+  navigator.userAgent.indexOf('iPod') != -1 ||
+  navigator.userAgent.indexOf('iPad') != -1
+) {
+  if (!window.navigator.standalone) {
+    if (!localStorage.getItem('homescreenbanner')) {
+      alert(
+        '밑에 있는 공유 버튼을 누르고 스크롤을 내려서 앱을 홈 화면에 추가하세요!',
+      );
+      localStorage.setItem('homescreenbanner', true);
     }
   }
+}
 let geupsik = localStorage.getItem('geupsik');
 localStorage.setItem('geupsik', geupsik * 1 + 1);
 

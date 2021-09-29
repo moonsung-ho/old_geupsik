@@ -6,7 +6,7 @@
   "author": "sungho0205 <moon@7959.ml>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html settings.html robots.txt offline.html",
+    "start": "parcel index.html settings.html robots.txt offline.html && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/setting.*.js && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/schools.mjs",
     "build": "yarn clean && parcel build settings.html index.html robots.txt offline.html --no-minify && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/app.*.js && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/setting.*.js && npx netlify deploy --prod --dir dist",
     "clean": "rm -rf dist",
     "git": "git add . && git commit -m 'd' && git push origin master"
