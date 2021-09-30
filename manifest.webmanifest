@@ -14,8 +14,8 @@
       "purpose": "any maskable"
     }
   ],
-  "prefer_related_applications": true,
-  "display": "standalone",
+  "prefer_related_applications": false,
+  "display": "minimal-ui",
   "orientation": "portrait",
   "background_color": "#d5d5d5",
   "theme_color": "#d5d5d5",

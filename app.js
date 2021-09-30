@@ -14,6 +14,7 @@ if ('serviceWorker' in navigator) {
 let dateInput = document.querySelector('#select-date');
 dateInput.value = getDateStr();
 let schoolCode = getSchoolCode();
+let officeCode = localStorage.getItem('officecode');
 while (!schoolCode) {
   const input = prompt(
     '학교 이름을 입력하세요. (ex.답십리초, 신길중, 이화여고)',
