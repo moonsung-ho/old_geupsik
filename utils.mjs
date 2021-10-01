@@ -8,7 +8,7 @@ const getDate = () => {
   }
   let date = today.getDate(); // 날짜
   if (date < 10) {
-    date = `0${date}` * 1;
+    date = `0${date}`;
   }
   return { year, month, date };
 };

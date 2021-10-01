@@ -12,9 +12,7 @@
     "git": "git add . && git commit -m 'd' && git push origin master"
   },
   "dependencies": {
-    "date-fns": "^2.24.0",
-    "sweetalert": "^2.1.2",
-    "sweetalert2": "^11.1.6"
+    "date-fns": "^2.24.0"
   },
   "devDependencies": {
     "cssnano": "^5.0.8",
