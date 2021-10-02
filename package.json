@@ -6,13 +6,14 @@
   "author": "sungho0205 <moon@7959.ml>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html settings.html robots.txt offline.html && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/setting.*.js && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/schools.mjs",
-    "build": "yarn clean && parcel build settings.html index.html robots.txt offline.html --no-minify && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/app.*.js && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/setting.*.js && npx netlify deploy --prod --dir dist",
+    "start": "parcel index.html settings.html robots.txt offline.html && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/settings/setting.*.js && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/schools.mjs",
+    "build": "yarn clean && parcel build settings/index.html index.html robots.txt offline.html --no-minify && sed -i '' 's/parcelRequire = (/var parcelRequire = (/g' dist/app.*.js && npx netlify deploy --prod --dir dist",
     "clean": "rm -rf dist",
     "git": "git add . && git commit -m 'd' && git push origin master"
   },
   "dependencies": {
     "console-read-write": "^0.1.1",
+    "date": "^1.0.2",
     "date-fns": "^2.24.0"
   },
   "devDependencies": {
