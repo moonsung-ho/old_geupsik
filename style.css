@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 @font-face {
   font-family: 'SBAggroL';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff')
     format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 label {
   margin-left: 6vh;

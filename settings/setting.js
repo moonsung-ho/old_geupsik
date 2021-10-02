@@ -15,6 +15,7 @@ function click() {
       localStorage.setItem('officecode', officeCode);
     }
   }
+  history.back()
 }
 document
   .getElementById('school-change-button')
